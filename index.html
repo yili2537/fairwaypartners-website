@@ -6,25 +6,40 @@
     <title>Fairway Partners | Precision in Strategy</title>
     <style>
         body {
-            background-color: #F8F8F1; /* 你的米白色背景 */
+            background-color: #F8F8F1; 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
+            padding: 0 20px; /* 增加边距防止手机贴边 */
             font-family: 'Times New Roman', serif;
+            text-align: center; /* 确保所有内容居中 */
         }
         img {
-            max-width: 300px; /* 调整Logo大小 */
+            max-width: 300px; 
+            width: 80%; /* 手机端自动缩小Logo */
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         .coming-soon {
-            color: #18472E; /* 你的深绿色字体 */
+            color: #18472E; 
             font-size: 1.2rem;
             letter-spacing: 3px;
             text-transform: uppercase;
+            white-space: nowrap; /* 强制不换行 */
+        }
+
+        /* 专门针对手机屏幕的优化 */
+        @media (max-width: 600px) {
+            .coming-soon {
+                font-size: 0.8rem; /* 手机上字体缩小点 */
+                letter-spacing: 2px; /* 间距稍微收紧 */
+            }
+            img {
+                max-width: 220px; /* 手机上Logo也稍微小一点更协调 */
+            }
         }
     </style>
 </head>
