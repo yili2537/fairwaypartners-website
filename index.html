@@ -8,48 +8,64 @@
         body {
             background-color: #F8F8F1; 
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            flex-direction: column; /* 纵向排列 */
+            align-items: center;    /* 水平居中 */
+            min-height: 100vh;      /* 保证 body 至少占满整个屏幕高度 */
             margin: 0;
-            padding: 0 20px; /* 增加边距防止手机贴边 */
+            padding: 0 20px; 
             font-family: 'Times New Roman', serif;
-            text-align: center; /* 确保所有内容居中 */
+            text-align: center;
         }
+
+        /* 核心：这个容器会占满中间所有剩余空间 */
+        .main-content {
+            flex: 1;               /* 自动撑开，把下面的 footer 顶下去 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 让 Logo 和文字在中间这块区域里居中 */
+            align-items: center;
+        }
+
         img {
             max-width: 300px; 
-            width: 80%; /* 手机端自动缩小Logo */
+            width: 80%;
             height: auto;
             margin-bottom: 30px;
         }
+
         .coming-soon {
             color: #18472E; 
             font-size: 1.2rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            white-space: nowrap; /* 强制不换行 */
+            white-space: nowrap;
         }
 
-        /* 专门针对手机屏幕的优化 */
+        footer {
+            padding: 20px 0; /* 给页脚一点上下间距 */
+            width: 100%;
+        }
+
         @media (max-width: 600px) {
             .coming-soon {
-                font-size: 0.8rem; /* 手机上字体缩小点 */
-                letter-spacing: 2px; /* 间距稍微收紧 */
+                font-size: 0.8rem;
+                letter-spacing: 2px;
             }
             img {
-                max-width: 220px; /* 手机上Logo也稍微小一点更协调 */
+                max-width: 220px;
             }
         }
     </style>
 </head>
 <body>
-    <img src="logo1.png" alt="Fairway Partners Logo">
-    <div class="coming-soon">Our digital home is Coming Soon</div>
 
+    <div class="main-content">
+        <img src="logo1.png" alt="Fairway Partners Logo">
+        <div class="coming-soon">Our digital home is Coming Soon</div>
+    </div>
 
-     <footer>
-        <p style="margin-top: 20px; opacity: 0.5;">&copy; 2026 Fairway Partners. All Rights Reserved.</p>
+    <footer>
+        <p style="opacity: 0.5; font-size: 0.8rem;">&copy; 2026 Fairway Partners. All Rights Reserved.</p>
     </footer>
     
 </body>
